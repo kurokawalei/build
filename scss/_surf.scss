@@ -1,0 +1,122 @@
+@charset "utf-8";
+@import "system";
+
+.soupBlock {
+  &.surf {
+    .row {
+      @include sm-mob() {
+        --bs-gutter-x: 0;
+      }
+    }
+    background-color: #77c7da;
+    .packageList {
+      background-color: #77c7da;
+    }
+    .des {
+      color: #fff;
+      font-size: 1.25rem;
+      max-width: 80%;
+      @include mob() {
+        max-width: 100%;
+      }
+      @include sm-mob() {
+        font-size: 1.25rem;
+      }
+      p {
+        margin: 0 0 3px 0;
+        border-bottom: #fff solid 2px;
+      }
+    }
+    .chTitle {
+      color: #77c7da;
+      span {
+        border-left: #77c7da solid 2px;
+        font-weight: 400;
+        display: inline-block;
+        padding: 0 5px;
+        margin-left: 5px;
+      }
+    }
+
+    .topInfoBlock {
+      &.seafood {
+        background-color: #0080a0;
+        @include xxl() {
+          max-width: 100%;
+        }
+        @include xl() {
+          max-width: 100%;
+        }
+        @include xl-pad-down() {
+          max-width: 100%;
+        }
+        .chTitle {
+          color: #0080a0;
+        }
+      }
+
+      @include mob() {
+        height: inherit;
+        border-bottom: none;
+      }
+    }
+
+    .menuBlock {
+      &.seafood {
+        background-color: #0080a0;
+      }
+      &.surf {
+        .row.pyspace {
+          @include mob() {
+            padding-top: 0;
+            img {
+              max-width: 80%;
+              margin: 0 auto 25px;
+            }
+          }
+          .packagBox.surf {
+            &:first-child {
+              border-bottom: #fff solid 1px;
+              padding-bottom: 150px;
+              @include mob() {
+                padding-bottom: 30px;
+                padding-left: 10%;
+                padding-right: 10%;
+              }
+
+              @include sm-mob() {
+                padding-left: 5%;
+                padding-right: 5%;
+              }
+            }
+            &:last-child {
+              padding-top: 150px;
+              @include mob() {
+                padding-top: 10px;
+                padding-left: 10%;
+                padding-right: 10%;
+              }
+              @include sm-mob() {
+                padding-left: 5%;
+                padding-right: 5%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .packageList {
+      background-color: #0080a0;
+      max-width: 80%;
+      margin: 0 auto;
+      .row {
+        font-size: 1.4rem;
+
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        justify-content: space-between;
+      }
+    }
+  }
+}

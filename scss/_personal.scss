@@ -1,0 +1,205 @@
+@charset "utf-8";
+@import "system";
+
+.soupBlock {
+  &.personal {
+    background-color: #618ea0;
+
+    // .chTitle span {
+    //   border-left: #962f00 solid 2px !important;
+    // }
+
+    .topInfoBlock {
+      height: inherit;
+      padding-top: 35px;
+      padding-bottom: 35px;
+      @include xl-pad() {
+        max-width: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+      }
+      @include pad() {
+        border-bottom: none;
+        padding-top: 50px;
+
+        max-width: 100%;
+        padding-left: 15%;
+        padding-right: 15%;
+      }
+      @include mob() {
+        border-bottom: none;
+        padding-top: 50px;
+        height: inherit;
+        max-width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+      @include sm-mob() {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 35px;
+        padding-bottom: 15px;
+      }
+    }
+    .des {
+      color: #fff;
+      font-size: $font * 1.25;
+      @include mob() {
+        font-size: $font * 1.25;
+        margin-top: 20px;
+      }
+    }
+    .chTitle {
+      color: #216980;
+      span {
+        font-weight: 400;
+        border-left: #216980 solid 2px;
+        display: inline-block;
+        padding: 0 5px;
+        margin-left: 5px;
+      }
+    }
+
+    .menuBlock {
+      .pyspace {
+        @include mob() {
+          padding-bottom: 0;
+        }
+      }
+      .alignStyle {
+        .packagBox {
+          @include mob() {
+            margin-bottom: 30px;
+          }
+        }
+      }
+
+      &.single.double {
+        @include mob() {
+          padding-bottom: 50px;
+        }
+      }
+    }
+  }
+}
+
+.menuBlock {
+  &.personal {
+    .packagBox {
+      border-bottom: #fff solid 1px;
+      margin-left: -12px;
+      padding: 70px 100px;
+      @include pad() {
+        border-bottom: none;
+      }
+      @include mob() {
+        margin-left: 0;
+        padding: 30px 15px;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+      &.line {
+        @include mob() {
+          border-bottom: #fff solid 1px;
+        }
+      }
+    }
+    .pyspace {
+      padding: 0;
+      justify-content: center;
+      img {
+        max-width: 80%;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &.single {
+    background-color: #962f00;
+    .infoBoxLeft {
+      img {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+.topInfoBlock {
+  &.single {
+    background-color: #962f00;
+    @include xl() {
+      max-width: 100%;
+      padding: 0 10%;
+    }
+    @include xl-pad() {
+      max-width: 100%;
+      padding: 0 10%;
+    }
+    .chTitle {
+      color: #962f00;
+    }
+  }
+
+  &.individual {
+    background-color: #ce9900;
+    height: inherit;
+    padding: 50px 0;
+    @include xl() {
+      max-width: 100%;
+      padding: 50px 10%;
+    }
+    @include xl-pad() {
+      max-width: 100%;
+      padding: 50px 10%;
+    }
+    .chTitle {
+      color: #ce9900;
+    }
+    p {
+      color: #fff;
+      font-size: $font * 2.25;
+    }
+  }
+}
+
+.packageList {
+  padding: 50px 0;
+  background-color: #ce9900;
+  color: #fff;
+
+  .maxW-1440 {
+    margin-bottom: 100px;
+    @include mob() {
+      margin-bottom: 50px;
+    }
+    .row {
+      &:first-child {
+        font-size: $font * 1.6;
+        margin-bottom: 10px;
+        border-bottom: none;
+      }
+      font-size: $font * 1.4;
+      border-bottom: #fff solid 1px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      justify-content: space-between;
+      @include mob() {
+        font-size: $font * 1;
+      }
+    }
+    .col-auto {
+      min-width: 80px;
+    }
+  }
+
+  .masterTitle {
+    font-size: $font * 1.5;
+    padding: 3px 0;
+    font-weight: 700;
+    border-top: #fff solid 2px;
+    border-bottom: #fff solid 2px;
+    display: inline-block;
+  }
+}

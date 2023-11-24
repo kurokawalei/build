@@ -1,0 +1,278 @@
+@charset "utf-8";
+@import "system";
+.soupBlock {
+  &.multi {
+    background-color: #216980;
+    .topInfoBlock {
+      border-bottom: #fff solid 1px;
+      height: inherit;
+      padding-top: 35px;
+      padding-bottom: 35px;
+
+      @include pad() {
+        border-bottom: none;
+        padding-top: 50px;
+      }
+      @include mob() {
+        border-bottom: none;
+        padding-top: 50px;
+        height: inherit;
+      }
+      @include sm-mob() {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 35px;
+      }
+    }
+    .des {
+      color: #fff;
+      font-size: $font * 1.5;
+      @include mob() {
+        font-size: $font * 1.25;
+        margin-top: 20px;
+      }
+    }
+    .chTitle {
+      color: #216980;
+      span {
+        font-weight: 400;
+        border-left: #216980 solid 2px;
+        display: inline-block;
+        padding: 0 5px;
+
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.menuBlock {
+  border-bottom: #fff solid 1px;
+  &.double {
+    background-color: #800c08;
+
+    .packagBox {
+      .packageName {
+        color: #800c08;
+      }
+    }
+
+    .alignStyle {
+      .packagBox {
+        &:first-child {
+          padding-bottom: 120px;
+          @include pad() {
+            padding-bottom: 100px;
+          }
+          @include mob() {
+            padding-bottom: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-top: 30px;
+          }
+        }
+        &:last-child {
+          padding-top: 120px;
+          @include pad() {
+            padding-top: 100px;
+          }
+          @include mob() {
+            padding-top: 0;
+            padding-left: 30px;
+            padding-right: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .infoBoxLeft {
+    text-align: center;
+    img {
+      @include sm-mob() {
+        max-width: 80%;
+      }
+    }
+    p {
+      color: #fff;
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      border-bottom: #fff solid 1px;
+      display: inline-block;
+      width: 60%;
+      text-align: left;
+      @include mob() {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0;
+        border-bottom: #fff solid 1px;
+        display: inline-block;
+        width: 90%;
+        text-align: left;
+      }
+      &:nth-last-child(2) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .pyspace {
+    padding: 120px 0;
+    position: relative;
+    justify-content: center;
+    @include pad() {
+      padding: 100px 0;
+    }
+    @include mob() {
+      padding: 50px 0;
+    }
+    @include sm-mob() {
+      padding: 25px 0;
+    }
+    &:before {
+      content: "";
+      height: 100%;
+      width: 1px;
+      background-color: #fff;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      top: 0;
+      @include pad() {
+        display: none;
+      }
+      @include mob() {
+        display: none;
+      }
+    }
+  }
+
+  .positionImg {
+    position: relative;
+    top: -120px;
+    @include pad() {
+      top: 0;
+      margin-bottom: 50px;
+      padding-right: 10%;
+    }
+    @include mob() {
+      top: 0;
+      margin-bottom: 50px;
+      padding-right: 10%;
+    }
+  }
+
+  .packagBox {
+    padding: 0 100px;
+    color: #fff;
+    @include pad() {
+      margin-bottom: 50px;
+    }
+    @include mob() {
+      padding: 0 5%;
+    }
+    @include sm-mob() {
+      padding: 0 15px;
+      margin-bottom: 30px;
+    }
+    .packageName {
+      background-color: #fff;
+      color: #216980;
+      font-size: $font * 2.25;
+      display: inline-block;
+      padding: 0 5px;
+      @include sm-mob() {
+        font-size: $font * 2;
+
+        margin-bottom: 15px;
+      }
+    }
+    .elsedes {
+      color: #fff;
+      font-size: $font * 1.25;
+      border-bottom: #fff solid 2px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .describe {
+      display: flex;
+      font-size: $font * 1.875;
+      justify-content: space-between;
+      margin-top: 20px;
+      @include mob() {
+        font-size: $font * 1.5;
+        margin-top: 0;
+      }
+      & > div {
+        &:first-child {
+          border-top: #fff solid 2px;
+          border-bottom: #fff solid 2px;
+        }
+      }
+    }
+    .packageMain {
+      font-size: $font * 1.25;
+      margin-top: 15px;
+      @include mob() {
+        font-size: $font * 1.25;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.topInfoBlock {
+  &.double {
+    background-color: #800c08;
+    @include xl() {
+      max-width: 100%;
+      padding: 0 10%;
+    }
+    @include xl-pad() {
+      max-width: 100%;
+      padding: 0 10%;
+    }
+    @include pad() {
+      max-width: 100%;
+      padding: 0 10%;
+    }
+    .chTitle {
+      color: #800c08;
+    }
+  }
+}
+
+.elseStoneBlock {
+  padding-top: 50px;
+  h3 {
+    color: #fff;
+    font-weight: 500;
+    font-size: $font * 3.75;
+    margin-bottom: 50px;
+    @include mob() {
+      font-size: $font * 2.25;
+    }
+  }
+
+  .list {
+    font-size: $font * 1.5;
+    color: #fff;
+    border-bottom: #fff solid 1px;
+    padding-bottom: 80px;
+    margin-bottom: 80px;
+    @include mob() {
+      font-size: $font * 1.25;
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+      img {
+        margin-bottom: 25px;
+      }
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

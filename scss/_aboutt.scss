@@ -1,0 +1,145 @@
+@charset "utf-8";
+@import "system";
+
+body {
+  &.about {
+    background-color: #fff;
+    #header {
+      background-color: #fff;
+      #nav {
+        ul {
+          li {
+            a {
+              color: #2e488e;
+            }
+          }
+        }
+      }
+    }
+    #logo {
+      path {
+        fill: #2e488e !important;
+      }
+    }
+    #menuIcon {
+      color: #2e488e;
+    }
+    #header {
+      .b-chlogo {
+        display: block;
+      }
+      .w-chlogo {
+        display: none;
+      }
+    }
+
+    .infoBox {
+      padding: 0 90px 0 0;
+      letter-spacing: 1px;
+      line-height: 110%;
+      @include mob() {
+        padding: 0;
+      }
+      .main {
+        font-size: $font * 1;
+      }
+      h1 {
+        font-size: $font * 2;
+        color: $f-color;
+        margin-bottom: 50px;
+        @include mob() {
+          margin-top: 25px;
+          margin-bottom: 25px;
+        }
+      }
+      .masterName {
+        margin-top: 50px;
+        div {
+          &:first-child {
+            font-size: $font * 1;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    #page3 {
+      .c8 {
+        position: absolute;
+        bottom: 5%;
+        left: 20%;
+        display: block;
+        @include mob() {
+          bottom: 8%;
+          left: 80%;
+          display: block;
+        }
+        @include sm-mob() {
+          display: none;
+        }
+      }
+      .c7 {
+        display: block;
+        @include mob() {
+          right: -200px;
+          img {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.aboutImage {
+  position: relative;
+  img {
+    position: relative;
+  }
+  &:before {
+    width: 732px;
+    height: 555px;
+    position: absolute;
+    content: url(../images/about/line15.svg);
+    z-index: 0;
+    left: -130px;
+    top: 100px;
+    @include xl() {
+      top: 50px;
+    }
+    @include mob() {
+      display: none;
+    }
+  }
+}
+
+.l16 {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  right: -350px;
+  @include mob() {
+    top: 55%;
+
+    right: -450px;
+    img {
+      width: 50%;
+    }
+  }
+}
+
+.aboutView {
+  display: none;
+  .row {
+    @include mob() {
+      margin-top: 12vh;
+    }
+  }
+  @include mob() {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    margin: 0;
+    padding: 25px 0;
+  }
+}
