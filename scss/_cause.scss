@@ -13,7 +13,7 @@
   }
   @include mob() {
     padding-left: 0px;
-    margin-top: 300px;
+    margin-top: 10vh;
   }
 
   .solgan {
@@ -82,4 +82,10 @@
 
 .tips {
   display: none;
+}
+
+.caseList {
+  @include sm-mob() {
+    margin-top: 150px;
+  }
 }

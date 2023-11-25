@@ -508,6 +508,11 @@
     position: absolute;
     z-index: -1;
     filter: opacity(0.5);
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 100%;
+    -o-object-position: center;
+       object-position: center;
   }
 }
 #menu.vis {
@@ -2522,6 +2527,11 @@ body {
 .nice-select.wide .list {
   background-color: rgba(255, 255, 255, 0.5) !important;
 }
+@media (max-width: 575.98px) {
+  .nice-select.wide .list {
+    background-color: rgb(255, 255, 255) !important;
+  }
+}
 .nice-select .option:hover,
 .nice-select .option.focus,
 .nice-select .option.selected.focus {
@@ -2748,7 +2758,7 @@ body {
 @media (max-width: 767.98px) {
   .caseBox {
     padding-left: 0px;
-    margin-top: 300px;
+    margin-top: 10vh;
   }
 }
 .caseBox .solgan {
@@ -2819,6 +2829,12 @@ body {
 
 .tips {
   display: none;
+}
+
+@media (max-width: 575.98px) {
+  .caseList {
+    margin-top: 150px;
+  }
 }
 
 .maxW-500 {
