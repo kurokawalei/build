@@ -16,45 +16,8 @@ $("#menuIcon").click(function (e) {
 
 
 
-
-
-
-// $("#menu").find("#menuLinks").find("a").click(function (e) {
-//   alert('qqq');
-// });
-
-const menuLinks = document.getElementById('menu');
-
-
-
-menuLinks.addEventListener('click', function(event) {
-
-
-  event.preventDefault();
-  
-  if (event.target.tagName === 'A') {
-    const pageNumber = event.target.dataset.page;
-    console.log(pageNumber);
-
-    $("#menu").removeClass("vis");
-    $("#menuIcon").removeClass("momo");
-
-    $('#menuIcon').find('i').removeClass("bi bi-x").addClass("bi bi-list");
-  
-    
-    showPage(pageNumber, 'menu');
-   
-  
-  }
- 
-
-});
-
-
-
 function showPage(pageNumber ) {
 
-  currentPage = pageNumber;
   const container = document.getElementById('wrap');
   container.style.transform = `translateX(-${(pageNumber - 1) * 100}vw)`;
 
@@ -82,11 +45,11 @@ function showPage(pageNumber ) {
 
 
 
-  if( pageNumber === 2 ){
+  if( pageNumber == 2 ){
           $('#page2').find('.masterTitle').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
   }
 
-  if(   pageNumber === 3 ){
+  if(   pageNumber == 3 ){
     $('#page3').find('.masterTitle').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
     $('#page3').find('.hiddenBlock').removeClass('vis');  
     setTimeout(function(){
@@ -94,16 +57,20 @@ function showPage(pageNumber ) {
     },1000)
   }
 
-  if(   pageNumber === 4 ){
+  if(   pageNumber == 4 ){
     $('#page4').find('.masterTitle').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
   }
 
-  if(   pageNumber === 5 ){
+  if(   pageNumber == 5 ){
     $('#page5').find('.masterTitle').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
     $('#page5').find('.infoBox').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');      
   }
 
-  if(   pageNumber === 6 ){
+  console.log(pageNumber);
+  
+  if(   pageNumber == 6 ){
+
+    
     $('#header').addClass('contant');
     $('#page6').find('.formBlock').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
     $('#page6').find('.contantBox').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
@@ -113,7 +80,40 @@ function showPage(pageNumber ) {
          }
   
 
-
-
-
 }
+
+
+
+
+
+
+
+const menuLinks = document.getElementById('menu');
+
+
+
+menuLinks.addEventListener('click', function(event) {
+
+
+  event.preventDefault();
+  
+  if (event.target.tagName === 'A') {
+    const pageNumber = event.target.dataset.page;
+  
+
+    $("#menu").removeClass("vis");
+    $("#menuIcon").removeClass("momo");
+
+    $('#menuIcon').find('i').removeClass("bi bi-x").addClass("bi bi-list");
+  
+    
+    showPage(pageNumber, 'menu');
+   
+  
+  }
+ 
+
+});
+
+
+
