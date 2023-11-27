@@ -62,20 +62,18 @@ function updateMenuClass(pageNumber) {
 
 
 
-function showPage(pageNumber , place) {
+function showPage(pageNumber ) {
 
     currentPage = pageNumber;
     const container = document.getElementById('wrap');
     container.style.transform = `translateX(-${(pageNumber - 1) * 100}vw)`;
 
     //點展開選單後
-    if(  place === 'menu' ){
-      $('#menuIcon').removeClass();
-      $("#menu").removeClass();
-      $('#menuIcon').find('i').removeClass("bi bi-x").addClass("bi bi-list");
-
-
-    }
+    // if(  place === 'menu' ){
+    //   $('#menuIcon').removeClass();
+    //   $("#menu").removeClass();
+    //   $('#menuIcon').find('i').removeClass("bi bi-x").addClass("bi bi-list");
+    // }
     //內頁
     if (window.location.hash === "#about"){
       window.location.hash = '';
@@ -246,10 +244,8 @@ $('.caseList .owl-carousel').owlCarousel({
   });
 
 
+  
 
 
-  // const nice = false;
 
-  // nice = $(".sectionBlock").niceScroll();
-    
 

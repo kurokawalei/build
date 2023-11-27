@@ -550,15 +550,19 @@
 #menu ul li a {
   font-size: 1.25rem;
   text-decoration: none;
+  display: block;
 }
 #menu ul li a .title {
   color: darkblue;
-  display: block;
   margin-bottom: 5px;
+  position: relative;
+  z-index: -1;
+  display: block;
 }
 #menu ul li a .infomacation {
   color: #333;
-  display: block;
+  position: relative;
+  z-index: -1;
 }
 #menu ul li:last-child {
   margin-bottom: 0;

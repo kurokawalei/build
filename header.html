@@ -110,18 +110,6 @@
   </div>
 </div>
 
-<script>
-  $("#menuIcon").click(function (e) {
-    e.preventDefault();
-    $(this).toggleClass("momo");
-
-    if ($(this).hasClass("momo")) {
-      $("#menu").addClass("vis");
-
-      $(this).find("i").removeClass("bi bi-list").addClass("bi bi-x");
-    } else {
-      $("#menu").removeClass("vis");
-      $(this).find("i").removeClass("bi bi-x").addClass("bi bi-list");
-    }
-  });
+<script type="module">
+  import menu from "./js/menu.js";
 </script>

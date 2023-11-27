@@ -140,14 +140,19 @@
       a {
         font-size: $font * 1.25;
         text-decoration: none;
+        display: block;
+
         .title {
           color: darkblue;
-          display: block;
           margin-bottom: 5px;
+          position: relative;
+          z-index: -1;
+          display: block;
         }
         .infomacation {
           color: #333;
-          display: block;
+          position: relative;
+          z-index: -1;
         }
       }
       &:last-child {
