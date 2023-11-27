@@ -39,12 +39,28 @@ $('select').niceSelect();
 
 
 
+
+
+
+
 AOS.init();
 
 
 
 
 let currentPage = 1;
+let scrolling = false;
+
+//focus線條
+function updateMenuClass(pageNumber) {
+  const ulary = document.querySelectorAll('#nav ul li');
+  ulary.forEach(li => {
+    li.classList.remove('selected');
+  });
+  ulary[pageNumber - 2].classList.add('selected');
+}
+
+
 
 function showPage(pageNumber , place) {
 
@@ -60,7 +76,6 @@ function showPage(pageNumber , place) {
 
 
     }
-
     //內頁
     if (window.location.hash === "#about"){
       window.location.hash = '';
@@ -81,27 +96,7 @@ function showPage(pageNumber , place) {
 
     }
 
-    //聯絡我們
-    if( pageNumber === 6  ){
-     $('#header').addClass('contant');
-    }else{
-     $('#header').removeClass('contant');
-    }
-
-    //focus線條
-    const ulary = document.querySelectorAll('#nav ul li');
-
-    ulary.forEach(item => {
-      item.addEventListener('click', function() {
-        // 先移除所有 li 的特定 class
-        ulary.forEach(li => {
-          li.classList.remove('selected');
-        });
-    
-        // 將當前點擊的 li 加上特定的 class
-        this.classList.add('selected');
-      });
-    });
+ 
 
 
     if( pageNumber === 2 ){
@@ -113,11 +108,7 @@ function showPage(pageNumber , place) {
       $('#page3').find('.hiddenBlock').removeClass('vis');  
       setTimeout(function(){
         secondFunction();
-
       },1000)
-
-   
-
     }
 
     if(   pageNumber === 4 ){
@@ -130,20 +121,85 @@ function showPage(pageNumber , place) {
     }
 
     if(   pageNumber === 6 ){
+      $('#header').addClass('contant');
       $('#page6').find('.formBlock').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
       $('#page6').find('.contantBox').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
 
-
-
-      
-       
-    }
+           }else{
+            $('#header').removeClass('contant');
+           }
     
-  
+
 
   
 
 }
+
+
+//滑鼠滾動相關
+function handleWheel(event) {
+
+  //不能滾動
+  if (window.location.hash === "#about" || window.location.hash === "#case" ) {
+    return;
+  }
+
+
+  if (!scrolling) {
+    scrolling = true;
+
+    if (event.deltaY > 30 && currentPage < 6) {
+      currentPage++;
+      showPage(currentPage);
+      updateMenuClass(currentPage);
+    } else if (event.deltaY < -30 && currentPage > 1) {
+      currentPage--;
+      showPage(currentPage);
+      updateMenuClass(currentPage);
+    }
+
+    setTimeout(() => {
+      scrolling = false;
+    }, 1000); // 限制滾動每次間隔至少為 1000 毫秒
+  }
+}
+
+document.body.addEventListener('wheel', handleWheel);
+
+document.addEventListener('DOMContentLoaded', function() {
+  const menuLinks = document.getElementById('menuLinks');
+
+  menuLinks.addEventListener('click', function(event) {
+    event.preventDefault();
+    if (event.target.tagName === 'A') {
+      const pageNumber = event.target.dataset.page;
+      showPage(pageNumber, 'menu');
+      updateMenuClass(pageNumber);
+    }
+   
+
+
+  });
+
+   //focus線條
+   const ulary = document.querySelectorAll('#nav ul li');
+
+   ulary.forEach(item => {
+     item.addEventListener('click', function() {
+       // 先移除所有 li 的特定 class
+       ulary.forEach(li => {
+         li.classList.remove('selected');
+       });
+   
+       // 將當前點擊的 li 加上特定的 class
+       this.classList.add('selected');
+     });
+   });
+
+
+
+});
+
 
 
 

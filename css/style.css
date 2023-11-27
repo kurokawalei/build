@@ -2107,7 +2107,7 @@ body {
 #page4 .t1 {
   position: absolute;
   top: -170px;
-  left: 25%;
+  left: 50%;
 }
 @media (min-width: 1400px) and (max-width: 1699.98px) {
   #page4 .t1 {
