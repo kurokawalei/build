@@ -111,6 +111,21 @@ body {
   transition: all 1s ease;
   opacity: 0;
 
+  .indexTitle {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-weight: 700;
+    @include mob() {
+      display: block;
+      width: 90%;
+    }
+  }
+
   .sectionBlock {
     .video-container {
       @include mob() {
@@ -799,7 +814,9 @@ body {
     }
     @include mob() {
       font-size: $font * 1.5;
-      margin-bottom: 50px;
+
+      margin-bottom: 25px;
+      margin-top: 25px;
     }
 
     .hiddenBlock {
