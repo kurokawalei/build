@@ -372,7 +372,6 @@ body {
       overflow-y: auto;
       height: 100vh;
       margin: 0;
-      padding-top: 150px;
     }
 
     &::-webkit-scrollbar {
@@ -555,6 +554,9 @@ body {
       img {
         width: 80%;
       }
+    }
+    @include mob() {
+      display: none;
     }
   }
   .l8 {
@@ -799,10 +801,9 @@ body {
     }
     @include mob() {
       font-size: $font * 1.5;
+      margin-bottom: 50px;
     }
-    @include sm-mob() {
-      margin-top: -50px;
-    }
+
     .hiddenBlock {
       background: #2e488e;
       width: 100%;
@@ -1049,12 +1050,6 @@ body {
   .tips {
     @include mob() {
       display: block;
-    }
-  }
-
-  .row {
-    @include sm-mob() {
-      margin-top: 250px;
     }
   }
 
