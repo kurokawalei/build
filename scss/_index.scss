@@ -117,7 +117,7 @@ body {
         height: 100vh;
 
         .infoTitle {
-          position: fixed;
+          position: absolute;
           z-index: 0;
           top: 50%;
           left: 50%;
@@ -331,9 +331,7 @@ body {
     @include mob() {
       font-size: $font * 1.5;
     }
-    @include sm-mob() {
-      margin-top: -50px;
-    }
+
     .hiddenBlock {
       background: #2e488e;
       width: 100%;
@@ -776,7 +774,7 @@ body {
 
   .row {
     @include mob() {
-      margin-top: 30vh;
+      margin-top: 15%;
     }
   }
 

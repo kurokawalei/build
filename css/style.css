@@ -1251,7 +1251,7 @@ body {
     height: 100vh;
   }
   #page1 .sectionBlock .video-container .infoTitle {
-    position: fixed;
+    position: absolute;
     z-index: 0;
     top: 50%;
     left: 50%;
@@ -1498,11 +1498,6 @@ body {
 @media (max-width: 767.98px) {
   #page1 .infoTitle {
     font-size: 1.5rem;
-  }
-}
-@media (max-width: 575.98px) {
-  #page1 .infoTitle {
-    margin-top: -50px;
   }
 }
 #page1 .infoTitle .hiddenBlock {
@@ -1974,7 +1969,7 @@ body {
 }
 @media (max-width: 767.98px) {
   #page4 .row {
-    margin-top: 30vh;
+    margin-top: 15%;
   }
 }
 @media (max-width: 767.98px) {
