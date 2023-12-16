@@ -1537,8 +1537,8 @@ body {
   #page2 .sectionBlock {
     overflow-x: hidden;
     overflow-y: auto;
-    height: 100vh;
-    margin: 300px 0 0 0;
+    height: 100%;
+    padding: 50% 0;
   }
 }
 #page2 .sectionBlock::-webkit-scrollbar {
@@ -1779,6 +1779,12 @@ body {
   position: relative;
   overflow: hidden;
 }
+#page3 .sectionBlock {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  padding: 50% 0;
+}
 #page3 a {
   text-decoration: none;
 }
@@ -1957,14 +1963,6 @@ body {
 }
 #page3 .c8 {
   display: none;
-}
-@media (max-width: 767.98px) {
-  #page3 {
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: 100vh;
-    margin: 0;
-  }
 }
 
 #page4 {
@@ -2246,16 +2244,16 @@ body {
   overflow: hidden;
 }
 @media (max-width: 767.98px) {
-  #page5 .tips {
-    display: block;
-  }
-}
-@media (max-width: 767.98px) {
   #page5 {
     overflow-x: hidden;
     overflow-y: auto;
     height: 100vh;
     margin: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  #page5 .tips {
+    display: block;
   }
 }
 #page5 input {

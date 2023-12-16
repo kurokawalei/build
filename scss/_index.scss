@@ -370,8 +370,8 @@ body {
     @include mob() {
       overflow-x: hidden;
       overflow-y: auto;
-      height: 100vh;
-      margin: 300px 0 0 0;
+      height: 100%;
+      padding: 50% 0;
     }
 
     &::-webkit-scrollbar {
@@ -595,6 +595,13 @@ body {
   position: relative;
   overflow: hidden;
 
+  .sectionBlock {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    padding: 50% 0;
+  }
+
   a {
     text-decoration: none;
     .videoWrap {
@@ -759,13 +766,6 @@ body {
   }
   .c8 {
     display: none;
-  }
-
-  @include mob() {
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: 100vh;
-    margin: 0;
   }
 }
 
@@ -1047,17 +1047,17 @@ body {
   position: relative;
   overflow: hidden;
 
-  .tips {
-    @include mob() {
-      display: block;
-    }
-  }
-
   @include mob() {
     overflow-x: hidden;
     overflow-y: auto;
     height: 100vh;
     margin: 0;
+  }
+
+  .tips {
+    @include mob() {
+      display: block;
+    }
   }
 
   input {
