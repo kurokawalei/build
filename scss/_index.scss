@@ -606,6 +606,7 @@ body {
       @include mob() {
         margin-bottom: 25px;
         display: block;
+        height: inherit;
       }
 
       &:before {
@@ -766,12 +767,6 @@ body {
     height: 100vh;
     margin: 0;
   }
-
-  .sectionBlock {
-    @include mob() {
-      padding-top: 150px;
-    }
-  }
 }
 
 //team
@@ -781,7 +776,7 @@ body {
 
   .row {
     @include mob() {
-      margin-top: 10vh;
+      margin-top: 30vh;
     }
   }
 
@@ -1061,7 +1056,7 @@ body {
 
   .row {
     @include sm-mob() {
-      margin-top: 50px;
+      margin-top: 250px;
     }
   }
 

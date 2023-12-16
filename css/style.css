@@ -1796,6 +1796,7 @@ body {
   #page3 a .videoWrap {
     margin-bottom: 25px;
     display: block;
+    height: inherit;
   }
 }
 #page3 a .videoWrap:before {
@@ -1966,11 +1967,6 @@ body {
     margin: 0;
   }
 }
-@media (max-width: 767.98px) {
-  #page3 .sectionBlock {
-    padding-top: 150px;
-  }
-}
 
 #page4 {
   position: relative;
@@ -1978,7 +1974,7 @@ body {
 }
 @media (max-width: 767.98px) {
   #page4 .row {
-    margin-top: 10vh;
+    margin-top: 30vh;
   }
 }
 @media (max-width: 767.98px) {
@@ -2261,7 +2257,7 @@ body {
 }
 @media (max-width: 575.98px) {
   #page5 .row {
-    margin-top: 50px;
+    margin-top: 250px;
   }
 }
 @media (max-width: 767.98px) {
