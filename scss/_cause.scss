@@ -2,12 +2,17 @@
 @import "system";
 
 .caseBox {
-  margin-top: 15vh;
+  margin-top: 0;
   display: none;
-  position: relative;
   overflow-y: auto;
   overflow-x: visible;
-  padding-left: 100px;
+  padding-top: 150px;
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  top: 0;
+  height: 100vh;
+
   @include xxl() {
     padding-left: 0px;
   }

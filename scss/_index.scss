@@ -69,7 +69,7 @@ body {
 
 #wrap {
   display: flex;
-  width: 600%;
+  width: 500%;
   transition: all 1.25s ease;
 }
 
@@ -111,11 +111,31 @@ body {
   transition: all 1s ease;
   opacity: 0;
 
+  .sectionBlock {
+    .video-container {
+      @include mob() {
+        height: 100vh;
+
+        .infoTitle {
+          position: fixed;
+          z-index: 0;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
   video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0 200px 200px 0;
+    border-radius: 0 30vw 30vw 0;
+    @include mob() {
+      border-radius: 0;
+    }
   }
 
   .l1 {
@@ -304,6 +324,7 @@ body {
     text-align: center;
     overflow: hidden;
     position: relative;
+    margin-top: 600px;
     @include xl-pad() {
       font-size: $font * 2;
     }
@@ -752,295 +773,66 @@ body {
 #page4 {
   position: relative;
   overflow: hidden;
+
+  .row {
+    @include mob() {
+      margin-top: 100px;
+    }
+  }
+
   @include mob() {
     overflow-x: hidden;
     overflow-y: auto;
     height: 100vh;
     margin: 0;
   }
-  a {
-    text-decoration: none;
-    display: block;
 
-    .videoWrap {
-      position: relative;
-      height: 280px;
-      width: 620px;
-      @include xxl() {
-        width: 585px;
-        height: 220px;
-      }
+  .infoTitle {
+    color: #fff;
+    font-size: $font * 3;
+    font-weight: 600;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 80px;
+    text-align: right;
 
-      @include xl() {
-        width: 450px;
-        height: 200px;
-      }
-      @include xl-pad() {
-        margin: 0 auto;
-      }
-      @include mob() {
-        width: 100%;
-        height: 300px;
-      }
-
-      &.p4Wrap {
-        height: 617px;
-        width: 440px;
-        @include xxl() {
-          height: 500px;
-          width: 300px;
-        }
-
-        @include xl() {
-          width: 280px;
-          height: 460px;
-        }
-        @include xl-pad() {
-          margin: 0 auto;
-        }
-        @include mob() {
-          width: 100%;
-          height: 300px;
-        }
-
-        video {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          -webkit-mask: url("../images/team/team_1.png");
-          mask: url("../images/team/team_1.png");
-          -webkit-mask-position: center;
-          -webkit-mask-repeat: no-repeat;
-          -webkit-mask-size: auto;
-          mask-repeat: no-repeat;
-          mask-position: center;
-          -webkit-mask-repeat: no-repeat;
-          mask-size: auto;
-          @include xxl() {
-            -webkit-mask-size: contain;
-            mask-size: contain;
-          }
-
-          @include xl() {
-            -webkit-mask-size: contain;
-            mask-size: contain;
-          }
-        }
-
-        &:before {
-          background-color: rgba(226, 187, 62, 0.65);
-          content: "";
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          position: absolute;
-          -webkit-mask: url("../images/team/team_1.png");
-          mask: url("../images/team/team_1.png");
-          -webkit-mask-position: center;
-          -webkit-mask-repeat: no-repeat;
-          -webkit-mask-size: auto;
-          mask-repeat: no-repeat;
-          mask-position: center;
-          -webkit-mask-repeat: no-repeat;
-          mask-size: auto;
-          z-index: 2;
-          opacity: 0;
-          transition: all 0.35s ease;
-          @include xxl() {
-            -webkit-mask-size: contain;
-            mask-size: contain;
-          }
-          @include xl() {
-            -webkit-mask-size: contain;
-            mask-size: contain;
-          }
-        }
-
-        &:hover {
-          .videoWrap {
-            &:before {
-              opacity: 1;
-              transition: all 0.35s ease;
-            }
-          }
-        }
-      }
-
-      video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        -webkit-mask: url("../images/team/team_2.png");
-        mask: url("../images/team/team_2.png");
-        -webkit-mask-position: center;
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-size: auto;
-        mask-repeat: no-repeat;
-        mask-position: center;
-        -webkit-mask-repeat: no-repeat;
-        mask-size: auto;
-      }
-
-      &:before {
-        background-color: rgba(226, 187, 62, 0.65);
-        content: "";
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        position: absolute;
-        -webkit-mask: url("../images/team/team_2.png");
-        mask: url("../images/team/team_2.png");
-        -webkit-mask-position: center;
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-size: auto;
-        mask-repeat: no-repeat;
-        mask-position: center;
-        -webkit-mask-repeat: no-repeat;
-        mask-size: auto;
-        z-index: 2;
-        opacity: 0;
-        transition: all 0.35s ease;
-      }
-    }
-
-    .masterTitle {
-      color: $f-color;
-      margin: 15px 0;
-      font-size: $font * 1.125;
-      position: relative;
-      @include xl-pad() {
-        margin: 30px 0;
-        text-align: center;
-      }
-    }
-
-    &:hover {
-      .videoWrap {
-        &:before {
-          opacity: 1;
-          transition: all 0.35s ease;
-        }
-      }
-    }
-  }
-
-  .sectionBlock {
     @include xl-pad() {
-      overflow-x: hidden;
-      overflow-y: auto;
-      height: calc(100vh - 100px);
-      margin: 10vh 30px;
-
-      &::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
-      }
-      &::-webkit-scrollbar-track {
-        border-radius: 3px;
-        background: rgba(0, 0, 0, 0.06);
-        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
-      }
-      //scroll
-      &::-webkit-scrollbar-thumb {
-        border-radius: 3px;
-        background: rgba(0, 0, 0, 0.12);
-        -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-      }
+      font-size: $font * 2;
     }
     @include mob() {
-      padding-top: 500px;
-      &::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
-      }
-      &::-webkit-scrollbar-track {
-        border-radius: 3px;
-        background: rgba(0, 0, 0, 0.06);
-        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
-      }
-      //scroll
-      &::-webkit-scrollbar-thumb {
-        border-radius: 3px;
-        background: rgba(0, 0, 0, 0.12);
-        -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-      }
+      font-size: $font * 1.5;
     }
+    @include sm-mob() {
+      margin-top: -50px;
+    }
+    .hiddenBlock {
+      background: #2e488e;
+      width: 100%;
+      position: absolute;
+      right: 0;
+      height: 100%;
+      transition: all 1s ease;
 
-    .row {
-      @include xl-pad-down() {
-        margin: 150px 0 0 0;
+      &.vis {
+        transition: all 1s ease;
+        width: 0%;
       }
     }
   }
 
-  .t1 {
-    position: absolute;
-    top: -170px;
-    left: 50%;
-    @include xxl() {
-      left: 50%;
-      top: -180px;
-      img {
-        width: 80%;
-      }
-    }
-
-    @include xl() {
-      left: 50%;
-      top: -150px;
-      img {
-        width: 65%;
-      }
-    }
-    @include mob() {
-      display: none;
+  .groupList {
+    a {
+      background-color: rgba(255, 255, 255, 0.35);
+      color: #fff;
+      border-radius: 15px;
+      padding: 60px 25px;
+      width: 100%;
+      display: block;
+      font-size: $font * 1.4;
+      text-align: center;
+      margin-bottom: 25px;
     }
   }
-  .t2 {
-    position: absolute;
-    left: 20%;
-    bottom: 15%;
-    @include mob() {
-      display: none;
-    }
-  }
-  .t3 {
-    position: absolute;
-    bottom: -300px;
-    left: 50%;
-    transform: translateX(-50%);
-    @include xl-pad() {
-      bottom: -280px;
-
-      img {
-        width: 60%;
-      }
-    }
-    @include mob() {
-      display: none;
-    }
-  }
-  .t4 {
-    position: absolute;
-    right: -180px;
-    top: 65%;
-    @include xl-pad() {
-      right: -300px;
-      img {
-        width: 60%;
-      }
-    }
-    @include mob() {
-      display: none;
-    }
-  }
-}
-
-#page5 {
-  position: relative;
-  overflow: hidden;
 
   a {
     text-decoration: none;
@@ -1061,7 +853,7 @@ body {
     }
 
     .videoWrap {
-      height: 778px;
+      height: 640px;
       position: relative;
       &:before {
         background-color: rgba(226, 187, 62, 0.65);
@@ -1140,8 +932,8 @@ body {
   }
   .c1 {
     position: absolute;
-    left: 0;
-    top: 68%;
+    left: 20%;
+    bottom: 50px;
     @include xl-pad() {
       img {
         width: 60%;
@@ -1152,7 +944,7 @@ body {
     }
   }
   .c2 {
-    bottom: -80px;
+    bottom: -150px;
     position: absolute;
     left: 75%;
     transform: translateX(-50%);
@@ -1163,6 +955,7 @@ body {
     }
     @include mob() {
       bottom: -120px;
+      display: none;
       img {
         width: 100%;
       }
@@ -1170,9 +963,11 @@ body {
   }
   .c3 {
     position: absolute;
-    right: 60px;
-    top: 40%;
-    transform: translateY(-50%);
+
+    position: absolute;
+    left: 20%;
+    top: 25px;
+
     @include xl() {
       right: -70px;
       z-index: -1;
@@ -1205,7 +1000,50 @@ body {
   }
 }
 
-#page6 {
+.caseList {
+  .owl-dots {
+    margin-top: 0 !important;
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    text-align: right;
+    padding-right: 15px;
+  }
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+    background: #fff;
+    width: 20px;
+    height: 8px;
+    margin: 5px 5px;
+  }
+
+  .owl-theme .owl-dots .owl-dot span {
+    width: 20px;
+    height: 8px;
+    margin: 5px 5px;
+  }
+}
+
+.nice-select {
+  width: 100% !important;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+
+  &.wide .list {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    @include sm-mob() {
+      background-color: rgba(255, 255, 255, 1) !important;
+    }
+  }
+
+  .option:hover,
+  .option.focus,
+  .option.selected.focus {
+    background-color: #2e488e !important;
+    color: #fff !important;
+  }
+}
+
+#page5 {
   background-color: #e2bb3e;
   position: relative;
   overflow: hidden;
@@ -1328,45 +1166,26 @@ body {
   }
 }
 
-.caseList {
-  .owl-dots {
-    margin-top: 0 !important;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    text-align: right;
-    padding-right: 15px;
-  }
-  .owl-theme .owl-dots .owl-dot.active span,
-  .owl-theme .owl-dots .owl-dot:hover span {
-    background: #fff;
-    width: 20px;
-    height: 8px;
-    margin: 5px 5px;
-  }
+.c7 {
+  position: fixed;
+  right: -150px;
+  bottom: 450px;
 
-  .owl-theme .owl-dots .owl-dot span {
-    width: 20px;
-    height: 8px;
-    margin: 5px 5px;
+  @include xl-pad-down() {
+    right: -300px;
+    bottom: 350px;
+    img {
+      max-width: 50%;
+    }
   }
 }
 
-.nice-select {
-  width: 100% !important;
-  background-color: rgba(255, 255, 255, 0.5) !important;
-
-  &.wide .list {
-    background-color: rgba(255, 255, 255, 0.5) !important;
-    @include sm-mob() {
-      background-color: rgba(255, 255, 255, 1) !important;
-    }
-  }
-
-  .option:hover,
-  .option.focus,
-  .option.selected.focus {
-    background-color: #2e488e !important;
-    color: #fff !important;
+.c10 {
+  position: absolute;
+  right: -150px;
+  top: 50%;
+  transform: translateY(-80%);
+  @include xl-pad-down() {
+    display: none;
   }
 }

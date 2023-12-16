@@ -53,7 +53,7 @@ let scrolling = false;
 
 //focus線條
 function updateMenuClass(pageNumber) {
-  const ulary = document.querySelectorAll('#nav ul li');
+  const ulary = document.querySelectorAll('#nav ul .li');
   ulary.forEach(li => {
     li.classList.remove('selected');
   });
@@ -64,9 +64,55 @@ function updateMenuClass(pageNumber) {
 
 function showPage(pageNumber ) {
 
-    currentPage = pageNumber;
-    const container = document.getElementById('wrap');
-    container.style.transform = `translateX(-${(pageNumber - 1) * 100}vw)`;
+  
+  currentPage = pageNumber;
+
+  console.log(currentPage);
+
+  const container = document.getElementById('wrap');
+  container.style.transform = `translateX(-${(pageNumber - 1) * 100}vw)`;
+
+
+
+  if (window.location.hash === "#about"){
+
+    console.log('在about要去別的耊面');
+
+    window.location.hash = '';
+
+    $('body').removeClass('about');
+    //$('#page2').find('.sectionBlock').addClass('animate__animated animate__fadeOut').css('display', 'none');
+    $('.aboutView').removeClass('animate__animated animate__fadeIn').css('display', 'none');
+  //  $('.tips').removeClass('animate__animated animate__fadeInLeft ').css('display', 'none')
+    
+
+  
+}
+  
+
+ 
+
+// 內頁
+
+
+if (window.location.hash === "#case"){
+
+  console.log('在case要去別的耊面');
+
+  window.location.hash = '';
+  $('body').removeClass('about');
+  $('.caseBox').removeClass('animate__animated animate__fadeIn').css('display', 'none');
+  $('.tips').removeClass('animate__animated animate__fadeInLeft').css('display', 'none');
+
+}
+
+
+
+    
+
+
+
+    
 
     //點展開選單後
     // if(  place === 'menu' ){
@@ -74,27 +120,8 @@ function showPage(pageNumber ) {
     //   $("#menu").removeClass();
     //   $('#menuIcon').find('i').removeClass("bi bi-x").addClass("bi bi-list");
     // }
-    //內頁
-    if (window.location.hash === "#about"){
-      window.location.hash = '';
-      $('body').removeClass('about');
-      $('#page2').find('.sectionBlock').removeClass('animate__animated animate__fadeOut').css('display', 'block');
-      $('.aboutView').removeClass('animate__animated animate__fadeIn').css('display', 'none');
 
-      $('.tips').removeClass('animate__animated animate__fadeInLeft').css('display', 'none');
-    }
 
-    if (window.location.hash === "#case"){
-      window.location.hash = '';
-      $('body').removeClass('about');
-      $('#page3').find('.sectionBlock').removeClass('animate__animated animate__fadeOut').css('display', 'block');
-      $('.caseBox').removeClass('animate__animated animate__fadeIn').css('display', 'none');
-
-      $('.tips').removeClass('animate__animated animate__fadeInLeft').css('display', 'none');
-
-    }
-
- 
 
 
     if( pageNumber === 2 ){
@@ -109,19 +136,24 @@ function showPage(pageNumber ) {
       },1000)
     }
 
+    // if(   pageNumber === 4 ){
+    //   $('#page4').find('.masterTitle').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
+    // }
+
     if(   pageNumber === 4 ){
       $('#page4').find('.masterTitle').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
+     
+
+      $('#page4').find('.hiddenBlock').removeClass('vis');  
+      setTimeout(function(){
+        secondFunction();
+      },1000)
     }
 
     if(   pageNumber === 5 ){
-      $('#page5').find('.masterTitle').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
-      $('#page5').find('.infoBox').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');      
-    }
-
-    if(   pageNumber === 6 ){
       $('#header').addClass('contant');
-      $('#page6').find('.formBlock').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
-      $('#page6').find('.contantBox').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
+      $('#page5').find('.formBlock').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
+      $('#page5').find('.contantBox').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
 
            }else{
             $('#header').removeClass('contant');
@@ -146,7 +178,7 @@ function handleWheel(event) {
   if (!scrolling) {
     scrolling = true;
 
-    if (event.deltaY > 30 && currentPage < 6) {
+    if (event.deltaY > 30 && currentPage < 5) {
       currentPage++;
       showPage(currentPage);
       updateMenuClass(currentPage);
@@ -167,20 +199,28 @@ document.body.addEventListener('wheel', handleWheel);
 document.addEventListener('DOMContentLoaded', function() {
   const menuLinks = document.getElementById('menuLinks');
 
-  menuLinks.addEventListener('click', function(event) {
-    event.preventDefault();
-    if (event.target.tagName === 'A') {
-      const pageNumber = event.target.dataset.page;
-      showPage(pageNumber, 'menu');
-      updateMenuClass(pageNumber);
-    }
-   
+  if (menuLinks) {
+    menuLinks.addEventListener('click', function(event) {
+      event.preventDefault();
+      if (event.target.tagName === 'A') {
+        const pageNumber = event.target.dataset.page;
+        showPage(pageNumber, 'menu');
+        updateMenuClass(pageNumber);
+      }
+     
+  
+  
+    });
+
+  }
 
 
-  });
+
 
    //focus線條
-   const ulary = document.querySelectorAll('#nav ul li');
+   const ulary = document.querySelectorAll('#nav ul .li');
+   console.log(ulary);
+   
 
    ulary.forEach(item => {
      item.addEventListener('click', function() {
@@ -212,7 +252,6 @@ function insideView(name){
 function checkHash() {
   if (window.location.hash === "#about") {
     $('body').addClass('about');
-    $('#page2').find('.sectionBlock').addClass('animate__animated animate__fadeOut').css('display', 'none');
     $('.aboutView').addClass('animate__animated animate__fadeIn').css('display', 'block');
     $('.tips').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
   } 
@@ -220,10 +259,7 @@ function checkHash() {
   //事蹟
   if (window.location.hash === "#case") {
     $('body').addClass('about');
-    $('#page3').find('.sectionBlock').addClass('animate__animated animate__fadeOut').css('display', 'none');
     $('.caseBox').addClass('animate__animated animate__fadeIn').css('display', 'block');
-
-
     $('.tips').addClass('animate__animated animate__fadeInLeft ').css('display', 'block');
 
   } 
@@ -244,7 +280,6 @@ $('.caseList .owl-carousel').owlCarousel({
   });
 
 
-  
 
 
 
