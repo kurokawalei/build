@@ -774,9 +774,9 @@ body {
   position: relative;
   overflow: hidden;
 
-  .row {
+  .container {
     @include mob() {
-      margin-top: 15%;
+      margin-top: 500px;
     }
   }
 

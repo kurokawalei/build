@@ -1972,8 +1972,8 @@ body {
   overflow: hidden;
 }
 @media (max-width: 767.98px) {
-  #page4 .row {
-    margin-top: 15%;
+  #page4 .container {
+    margin-top: 500px;
   }
 }
 @media (max-width: 767.98px) {
@@ -3070,6 +3070,6 @@ body.about #page3 .c7 {
     overflow-y: auto;
     height: 100vh;
     margin: 0;
-    padding: 0;
+    padding: 0 0 150px 0;
   }
 }/*# sourceMappingURL=style.css.map */
