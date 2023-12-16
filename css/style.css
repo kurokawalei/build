@@ -1779,11 +1779,13 @@ body {
   position: relative;
   overflow: hidden;
 }
-#page3 .sectionBlock {
-  overflow-x: hidden;
-  overflow-y: auto;
-  height: 100%;
-  padding: 50% 0;
+@media (max-width: 767.98px) {
+  #page3 .sectionBlock {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    padding: 50% 0;
+  }
 }
 #page3 a {
   text-decoration: none;
@@ -1970,16 +1972,11 @@ body {
   overflow: hidden;
 }
 @media (max-width: 767.98px) {
-  #page4 .container {
-    margin-top: 500px;
-  }
-}
-@media (max-width: 767.98px) {
-  #page4 {
+  #page4 .sectionBlock {
     overflow-x: hidden;
     overflow-y: auto;
-    height: 100vh;
-    margin: 0;
+    height: 100%;
+    padding: 50% 0;
   }
 }
 #page4 .infoTitle {
@@ -2244,11 +2241,11 @@ body {
   overflow: hidden;
 }
 @media (max-width: 767.98px) {
-  #page5 {
+  #page5 .sectionBlock {
     overflow-x: hidden;
     overflow-y: auto;
-    height: 100vh;
-    margin: 0;
+    height: 100%;
+    padding: 50% 0;
   }
 }
 @media (max-width: 767.98px) {

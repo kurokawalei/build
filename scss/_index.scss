@@ -596,10 +596,12 @@ body {
   overflow: hidden;
 
   .sectionBlock {
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: 100%;
-    padding: 50% 0;
+    @include mob() {
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 100%;
+      padding: 50% 0;
+    }
   }
 
   a {
@@ -774,17 +776,13 @@ body {
   position: relative;
   overflow: hidden;
 
-  .container {
+  .sectionBlock {
     @include mob() {
-      margin-top: 500px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 100%;
+      padding: 50% 0;
     }
-  }
-
-  @include mob() {
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: 100vh;
-    margin: 0;
   }
 
   .infoTitle {
@@ -1047,11 +1045,13 @@ body {
   position: relative;
   overflow: hidden;
 
-  @include mob() {
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: 100vh;
-    margin: 0;
+  .sectionBlock {
+    @include mob() {
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 100%;
+      padding: 50% 0;
+    }
   }
 
   .tips {
