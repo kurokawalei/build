@@ -433,12 +433,6 @@
   z-index: 1;
   height: 125px;
 }
-@media (max-width: 767.98px) {
-  #header {
-    position: relative;
-    height: 100px;
-  }
-}
 #header .maxW-1745 {
   height: inherit;
 }
@@ -1544,7 +1538,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     height: 100vh;
-    margin: 0;
+    margin: 300px 0 0 0;
   }
 }
 #page2 .sectionBlock::-webkit-scrollbar {
@@ -2645,7 +2639,8 @@ body {
 @media (max-width: 767.98px) {
   .caseBox {
     padding-left: 0px;
-    margin-top: 10vh;
+    margin-top: 0;
+    padding-top: 0;
   }
 }
 .caseBox .solgan {
@@ -2962,6 +2957,7 @@ body.about .infoBox {
 @media (max-width: 767.98px) {
   body.about .infoBox {
     padding: 0;
+    margin-bottom: 0;
   }
 }
 body.about .infoBox .main {
@@ -3051,6 +3047,7 @@ body.about #page3 .c7 {
   .l16 {
     top: 55%;
     right: -450px;
+    z-index: -1;
   }
   .l16 img {
     width: 50%;
@@ -3068,16 +3065,11 @@ body.about #page3 .c7 {
   display: none;
 }
 @media (max-width: 767.98px) {
-  .aboutView .row {
-    margin-top: 12vh;
-  }
-}
-@media (max-width: 767.98px) {
   .aboutView {
     overflow-x: hidden;
     overflow-y: auto;
     height: 100vh;
     margin: 0;
-    padding: 25px 0;
+    padding: 0;
   }
 }/*# sourceMappingURL=style.css.map */

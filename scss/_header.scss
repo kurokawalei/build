@@ -10,10 +10,6 @@
   background-color: #fff;
   z-index: 1;
   height: 125px;
-  @include mob() {
-    position: relative;
-    height: 100px;
-  }
 
   .maxW-1745 {
     height: inherit;

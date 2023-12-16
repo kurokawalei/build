@@ -18,7 +18,8 @@
   }
   @include mob() {
     padding-left: 0px;
-    margin-top: 10vh;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .solgan {

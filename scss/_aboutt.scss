@@ -39,6 +39,7 @@ body {
       line-height: 180%;
       @include mob() {
         padding: 0;
+        margin-bottom: 0;
       }
       .main {
         font-size: $font * 1;
@@ -120,8 +121,9 @@ body {
   right: -350px;
   @include mob() {
     top: 55%;
-
     right: -450px;
+
+    z-index: -1;
     img {
       width: 50%;
     }
@@ -138,16 +140,11 @@ body {
   padding-top: 150px;
   display: none;
 
-  .row {
-    @include mob() {
-      margin-top: 12vh;
-    }
-  }
   @include mob() {
     overflow-x: hidden;
     overflow-y: auto;
     height: 100vh;
     margin: 0;
-    padding: 25px 0;
+    padding: 0;
   }
 }
