@@ -138,6 +138,7 @@
   @include mob() {
     img {
       height: 350px;
+      margin-top: -250px;
     }
   }
   @include sm-mob() {
@@ -162,6 +163,19 @@
       .row {
         height: inherit;
         align-items: center;
+        .col-md-6 {
+          &:first-child {
+            @include mob() {
+              order: 2;
+            }
+          }
+
+          &:last-child {
+            @include mob() {
+              order: 1;
+            }
+          }
+        }
       }
     }
   }

@@ -603,6 +603,10 @@ body {
       @include xl() {
         height: 350px;
       }
+      @include mob() {
+        margin-bottom: 25px;
+        display: block;
+      }
 
       &:before {
         background-color: rgba(226, 187, 62, 0.65);
@@ -634,6 +638,7 @@ body {
       }
       @include mob() {
         margin: 25px 0;
+        display: none;
       }
     }
 
@@ -776,7 +781,7 @@ body {
 
   .row {
     @include mob() {
-      margin-top: 100px;
+      margin-top: 10vh;
     }
   }
 
@@ -1047,6 +1052,13 @@ body {
   background-color: #e2bb3e;
   position: relative;
   overflow: hidden;
+
+  .tips {
+    @include mob() {
+      display: block;
+    }
+  }
+
   .row {
     @include sm-mob() {
       margin-top: 50px;
