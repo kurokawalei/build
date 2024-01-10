@@ -1,0 +1,81 @@
+@charset "utf-8";
+@import "system";
+
+.activeSlider {
+  position: relative;
+  &:before {
+    content: url(../images/active/active.svg);
+    width: 414px;
+    height: 517px;
+    position: absolute;
+    left: -150px;
+    top: -100px;
+    @include mob() {
+      display: none;
+    }
+  }
+  .imgBox {
+    position: relative;
+    img {
+      height: 700px;
+      object-fit: cover;
+      object-position: center;
+      @include mob() {
+        height: 500px;
+      }
+      @include sm-mob() {
+        height: 400px;
+      }
+    }
+    .date {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      padding: 5px;
+      background-color: #2b4586;
+      color: #fff;
+      font-size: $font * 1;
+    }
+  }
+}
+
+.activeInside {
+  .leftArea {
+    padding-left: 50px;
+    @include mob() {
+      padding-left: 0;
+    }
+  }
+  h1 {
+    margin-top: 50px;
+  }
+  .masterTitle {
+    margin-bottom: 100px;
+    @include mob() {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.leftArea {
+  ul {
+    @include ulstyle();
+    padding-left: 25px;
+    li {
+      margin: 10px 0;
+      a {
+        font-size: $font * 1.5;
+        text-decoration: none;
+        transition: all 0.35s ease;
+
+        color: #333;
+        &:hover {
+          color: #2b4586;
+          text-decoration: underline;
+          transition: all 0.35s ease;
+        }
+      }
+    }
+  }
+}

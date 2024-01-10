@@ -2,17 +2,6 @@
 @import "system";
 
 .caseBox {
-  margin-top: 0;
-  display: none;
-  overflow-y: auto;
-  overflow-x: visible;
-  padding-top: 150px;
-  position: fixed;
-  background: #fff;
-  width: 100%;
-  top: 0;
-  height: 100vh;
-
   @include xxl() {
     padding-left: 0px;
   }
@@ -94,4 +83,152 @@
   @include sm-mob() {
     margin-top: 150px;
   }
+}
+
+.caseListInside {
+  background-color: #fff;
+  min-height: calc(100vh - 205px);
+  margin-top: 125px;
+
+  @include mob() {
+    height: 100dvh;
+  }
+  .container-fluid {
+    height: inherit;
+    .row {
+      height: inherit;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .leftArea {
+    margin-left: -15px;
+    img {
+      height: inherit;
+      max-height: 1074px;
+    }
+  }
+  .listMain {
+    max-width: 100%;
+
+    min-height: 1000px;
+    max-height: 1000px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 25px;
+    .buildMenu {
+      a {
+        font-size: $font * 1.5;
+        color: #c3c3c3;
+        text-decoration: none;
+        margin: 0 30px;
+        &.active {
+          color: #ddb63e;
+        }
+        &:first-child {
+          position: relative;
+          margin-left: 0;
+          &::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: #c3c3c3;
+            position: absolute;
+            right: -37px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+    .arrow {
+      a {
+        transition: color 0.35s ease;
+
+        i {
+          font-size: $font * 4;
+        }
+        color: #ccc;
+        &:hover {
+          color: #2e488e;
+          transition: color 0.35s ease;
+        }
+      }
+    }
+    .list {
+      .buildName {
+        color: #4d4d4d;
+        font-size: $font * 1.4;
+        margin-bottom: 10px;
+      }
+      .smbuildName {
+        color: #ccc;
+        font-size: $font * 1;
+        margin-bottom: 10px;
+      }
+      ul {
+        @include ulstyle();
+        border-top: #ccc solid 1px;
+        li {
+          border-bottom: #ccc solid 1px;
+          padding: 25px 0;
+          a {
+            transition: all 0.35s ease;
+            img {
+              filter: grayscale(1);
+              transition: all 0.35s ease;
+              height: 250px;
+              object-fit: cover;
+            }
+
+            &:hover {
+              transition: all 0.35s ease;
+              img {
+                filter: grayscale(0);
+                transition: all 0.35s ease;
+              }
+            }
+          }
+        }
+      }
+      .addressInfo {
+        margin-top: 50%;
+        ul {
+          @include ulstyle();
+          border-top: none;
+          li {
+            padding: 5px 0;
+            border: none;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.caseList {
+  .owl-dots {
+    margin-left: -100%;
+    text-align: left;
+    margin-top: 0 !important;
+  }
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+    background: #666;
+    width: 20px;
+    height: 8px;
+    margin: 5px 5px;
+  }
+
+  .owl-theme .owl-dots .owl-dot span {
+    width: 20px;
+    height: 8px;
+    margin: 5px 5px;
+  }
+}
+
+.showBox {
+  display: none;
 }

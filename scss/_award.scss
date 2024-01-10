@@ -1,0 +1,106 @@
+@charset "utf-8";
+@import "system";
+
+.awardInside {
+  background-color: #fff;
+  height: calc(100vh - 205px);
+  margin-top: 125px;
+  @include mob() {
+    height: 100dvh;
+  }
+  .container-fluid {
+    height: inherit;
+    .row {
+      height: inherit;
+      align-items: center;
+    }
+  }
+  .leftArea {
+    img {
+      margin-left: -15px;
+      @include mob() {
+        display: none;
+      }
+    }
+  }
+  h1 {
+    color: #c3c3c3;
+    font-size: $font * 1;
+    padding-left: 25px;
+  }
+  .masterTitle {
+    color: #ddb63e;
+    font-size: $font * 2;
+    font-weight: 700;
+    padding-left: 25px;
+  }
+  .dateList {
+    @include mob() {
+      padding-left: 50px;
+      margin-bottom: 100px;
+      padding-top: 50px;
+    }
+    ul {
+      @include ulstyle();
+      li {
+        position: relative;
+        padding: 50px 30px;
+        span {
+          display: block;
+          &:first-child {
+            color: #2b4586;
+            font-weight: 600;
+            position: relative;
+            &:before {
+              content: "";
+              width: 15px;
+              height: 15px;
+              background-color: #2b4586;
+              position: absolute;
+              left: -37px;
+              top: 4px;
+              border-radius: 50vw;
+            }
+          }
+          &:last-child {
+            color: #666;
+          }
+        }
+        &:before {
+          content: "";
+          width: 1px;
+          height: 100%;
+          left: 0;
+          position: absolute;
+          background-color: #2b4586;
+        }
+
+        &:first-child {
+          &:before {
+            content: "";
+            width: 1px;
+            height: 150%;
+            left: 0;
+            position: absolute;
+            background-color: #2b4586;
+            top: -15%;
+          }
+
+          &:after {
+            content: url(../images/award/arrow-top.png);
+
+            position: absolute;
+            left: -11px;
+            top: -30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.awardSlideBox {
+  img {
+    border-radius: 15vw 0 0 15vw;
+  }
+}

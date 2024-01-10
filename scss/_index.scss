@@ -1014,30 +1014,6 @@ body {
   }
 }
 
-.caseList {
-  .owl-dots {
-    margin-top: 0 !important;
-    position: absolute;
-    top: 15px;
-    width: 100%;
-    text-align: right;
-    padding-right: 15px;
-  }
-  .owl-theme .owl-dots .owl-dot.active span,
-  .owl-theme .owl-dots .owl-dot:hover span {
-    background: #fff;
-    width: 20px;
-    height: 8px;
-    margin: 5px 5px;
-  }
-
-  .owl-theme .owl-dots .owl-dot span {
-    width: 20px;
-    height: 8px;
-    margin: 5px 5px;
-  }
-}
-
 .nice-select {
   width: 100% !important;
   background-color: rgba(255, 255, 255, 0.5) !important;
