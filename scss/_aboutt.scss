@@ -37,6 +37,10 @@ body {
       padding: 0 90px 0 0;
       letter-spacing: 1px;
       line-height: 180%;
+      .infoTitle {
+        color: #c3c3c3;
+        font-size: 1rem;
+      }
       @include mob() {
         padding: 0;
         margin-bottom: 0;
@@ -47,6 +51,7 @@ body {
       h1 {
         font-size: $font * 2;
         color: $f-color;
+        font-weight: 600;
         margin-bottom: 50px;
         @include mob() {
           margin-top: 25px;
