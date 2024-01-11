@@ -6,7 +6,7 @@
   height: calc(100vh - 205px);
   margin-top: 125px;
   @include mob() {
-    height: 100dvh;
+    height: auto;
   }
   .container-fluid {
     height: inherit;
@@ -100,6 +100,11 @@
 }
 
 .awardSlideBox {
+  @include mob() {
+    margin: 15px;
+    position: relative;
+    z-index: 0;
+  }
   img {
     border-radius: 15vw 0 0 15vw;
   }

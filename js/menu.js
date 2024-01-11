@@ -4,11 +4,12 @@ export default $("#menuIcon").click(function (e) {
 
   if ($(this).hasClass("momo")) {
     $("#menu").addClass("vis");
-
     $(this).find("i").removeClass("bi bi-list").addClass("bi bi-x");
+    $("#page1").find(".indexTitle").css("display", "none");
   } else {
     $("#menu").removeClass("vis");
     $(this).find("i").removeClass("bi bi-x").addClass("bi bi-list");
+    $("#page1").find(".indexTitle").css("display", "block");
   }
 });
 
