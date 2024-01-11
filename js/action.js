@@ -48,37 +48,60 @@ function updateMenuClass(pageNumber) {
   }
 }
 
+if (window.location.hash === "#4") {
+  const container = document.getElementById("wrap");
+  setTimeout(function () {
+    container.style.transform = `translateX(-${300}vw)`;
+  }, 3500);
+}
+
+if (window.location.hash === "#5") {
+  const container = document.getElementById("wrap");
+  setTimeout(function () {
+    container.style.transform = `translateX(-${400}vw)`;
+    $("#page5").find(".formBlock").addClass("animate__animated animate__fadeInLeft ").css("display", "block");
+    $("#page5").find(".contantBox").addClass("animate__animated animate__fadeInLeft ").css("display", "block");
+  }, 3500);
+}
+
 function showPage(pageNumber) {
   currentPage = pageNumber;
 
   console.log(currentPage);
 
   const container = document.getElementById("wrap");
+
   if (container) {
     container.style.transform = `translateX(-${(pageNumber - 1) * 100}vw)`;
+  } else {
+    if (pageNumber === 4) {
+      window.location.href = "./index.html#4";
+    } else if (pageNumber === 5) {
+      window.location.href = "./index.html#5";
+    }
   }
 
-  if (window.location.hash === "#about") {
-    console.log("在about要去別的耊面");
+  // if (window.location.hash === "#about") {
+  //   console.log("在about要去別的耊面");
 
-    window.location.hash = "";
+  //   window.location.hash = "";
 
-    $("body").removeClass("about");
-    //$('#page2').find('.sectionBlock').addClass('animate__animated animate__fadeOut').css('display', 'none');
-    $(".aboutView").removeClass("animate__animated animate__fadeIn").css("display", "none");
-    //  $('.tips').removeClass('animate__animated animate__fadeInLeft ').css('display', 'none')
-  }
+  //   $("body").removeClass("about");
+  //   //$('#page2').find('.sectionBlock').addClass('animate__animated animate__fadeOut').css('display', 'none');
+  //   $(".aboutView").removeClass("animate__animated animate__fadeIn").css("display", "none");
+  //   //  $('.tips').removeClass('animate__animated animate__fadeInLeft ').css('display', 'none')
+  // }
 
   // 內頁
 
-  if (window.location.hash === "#case") {
-    console.log("在case要去別的耊面");
+  // if (window.location.hash === "#case") {
+  //   console.log("在case要去別的耊面");
 
-    window.location.hash = "";
-    $("body").removeClass("about");
-    $(".caseBox").removeClass("animate__animated animate__fadeIn").css("display", "none");
-    $(".tips").removeClass("animate__animated animate__fadeInLeft").css("display", "none");
-  }
+  //   window.location.hash = "";
+  //   $("body").removeClass("about");
+  //   $(".caseBox").removeClass("animate__animated animate__fadeIn").css("display", "none");
+  //   $(".tips").removeClass("animate__animated animate__fadeInLeft").css("display", "none");
+  // }
 
   //點展開選單後
   // if(  place === 'menu' ){
@@ -165,7 +188,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //focus線條
   const ulary = document.querySelectorAll("#nav ul .li");
-  console.log(ulary);
 
   ulary.forEach((item) => {
     item.addEventListener("click", function () {

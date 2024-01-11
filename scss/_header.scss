@@ -195,7 +195,7 @@
     li {
       text-align: right;
       margin-bottom: 50px;
-      a {
+      span {
         font-size: $font * 1.25;
         text-decoration: none;
         display: block;
@@ -208,13 +208,28 @@
           display: block;
         }
         .infomacation {
-          color: #333;
-          position: relative;
-          z-index: -1;
+          a {
+            color: #333;
+            position: relative;
+            z-index: -1;
+            text-decoration: none;
+            &:last-child {
+              &:after {
+                display: none;
+              }
+            }
+            &:after {
+              content: "▪";
+            }
+          }
         }
       }
       &:last-child {
         margin-bottom: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #00008b;
       }
     }
   }

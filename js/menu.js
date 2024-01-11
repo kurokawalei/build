@@ -1,6 +1,4 @@
-export default 
-
-$("#menuIcon").click(function (e) {
+export default $("#menuIcon").click(function (e) {
   e.preventDefault();
   $(this).toggleClass("momo");
 
@@ -14,44 +12,26 @@ $("#menuIcon").click(function (e) {
   }
 });
 
+const menuLinks = document.getElementById("menu");
 
-
-
-
-
-
-const menuLinks = document.getElementById('menu');
-
-
-
-menuLinks.addEventListener('click', function(event) {
-
-
+menuLinks.addEventListener("click", function (event) {
   event.preventDefault();
-  
-  if (event.target.tagName === 'A') {
+
+  if (event.target.tagName === "SPAN") {
     const pageNumber = event.target.dataset.page;
-  
 
     $("#menu").removeClass("vis");
     $("#menuIcon").removeClass("momo");
 
-    $('#menuIcon').find('i').removeClass("bi bi-x").addClass("bi bi-list");
-          showPage(pageNumber, 'menu');
-     
-  }
- 
+    $("#menuIcon").find("i").removeClass("bi bi-x").addClass("bi bi-list");
 
+    showPage(pageNumber, "menu");
+  }
 });
 
-
-
 //選單
-$('#nav').find('li').hover(function(){
-  $(this).find('ul').stop().fadeToggle(350)
-})
-
-
-
-
-
+$("#nav")
+  .find("li")
+  .hover(function () {
+    $(this).find("ul").stop().fadeToggle(350);
+  });

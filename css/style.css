@@ -606,25 +606,36 @@
   text-align: right;
   margin-bottom: 50px;
 }
-#menu ul li a {
+#menu ul li span {
   font-size: 1.25rem;
   text-decoration: none;
   display: block;
 }
-#menu ul li a .title {
+#menu ul li span .title {
   color: darkblue;
   margin-bottom: 5px;
   position: relative;
   z-index: -1;
   display: block;
 }
-#menu ul li a .infomacation {
+#menu ul li span .infomacation a {
   color: #333;
   position: relative;
   z-index: -1;
+  text-decoration: none;
+}
+#menu ul li span .infomacation a:last-child:after {
+  display: none;
+}
+#menu ul li span .infomacation a:after {
+  content: "▪";
 }
 #menu ul li:last-child {
   margin-bottom: 0;
+}
+#menu ul li a {
+  text-decoration: none;
+  color: #00008b;
 }
 
 .maxW-500 {
@@ -890,6 +901,9 @@ footer.fixed {
   color: #fff;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+.under .row {
   justify-content: center;
 }
 
@@ -2699,12 +2713,6 @@ body {
   display: none;
 }
 
-@media (max-width: 575.98px) {
-  .caseList {
-    margin-top: 150px;
-  }
-}
-
 .caseListInside {
   background-color: #fff;
   min-height: calc(100vh - 205px);
@@ -2712,7 +2720,7 @@ body {
 }
 @media (max-width: 767.98px) {
   .caseListInside {
-    height: 100dvh;
+    height: auto;
   }
 }
 .caseListInside .container-fluid {
@@ -2726,6 +2734,16 @@ body {
 .caseListInside .leftArea {
   margin-left: -15px;
 }
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .caseListInside .leftArea {
+    display: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .caseListInside .leftArea {
+    display: none;
+  }
+}
 .caseListInside .leftArea img {
   height: inherit;
   max-height: 1074px;
@@ -2737,6 +2755,13 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 25px;
+}
+@media (max-width: 767.98px) {
+  .caseListInside .listMain {
+    padding-right: 0;
+    max-height: inherit;
+    overflow-y: hidden;
+  }
 }
 .caseListInside .listMain .buildMenu a {
   font-size: 1.5rem;
@@ -2792,6 +2817,15 @@ body {
   border-bottom: #ccc solid 1px;
   padding: 25px 0;
 }
+.caseListInside .listMain .list ul li .box .d-flex {
+  justify-content: space-between;
+}
+@media (max-width: 767.98px) {
+  .caseListInside .listMain .list ul li .box .d-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 .caseListInside .listMain .list ul li a {
   transition: all 0.35s ease;
 }
@@ -2801,6 +2835,12 @@ body {
   height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+}
+@media (max-width: 767.98px) {
+  .caseListInside .listMain .list ul li a img {
+    width: 100%;
+  }
 }
 .caseListInside .listMain .list ul li a:hover {
   transition: all 0.35s ease;
@@ -2811,6 +2851,22 @@ body {
 }
 .caseListInside .listMain .list .addressInfo {
   margin-top: 50%;
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .caseListInside .listMain .list .addressInfo {
+    margin-top: 20%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .caseListInside .listMain .list .addressInfo {
+    margin-top: 20%;
+  }
+}
+@media (max-width: 767.98px) {
+  .caseListInside .listMain .list .addressInfo {
+    margin-top: 15%;
+    margin-bottom: 15%;
+  }
 }
 .caseListInside .listMain .list .addressInfo ul {
   padding: 0;
@@ -2824,6 +2880,9 @@ body {
   padding: 0;
 }
 
+.caseList .item img {
+  height: auto !important;
+}
 .caseList .owl-dots {
   margin-left: -100%;
   text-align: left;
@@ -2844,6 +2903,11 @@ body {
 
 .showBox {
   display: none;
+}
+@media (max-width: 767.98px) {
+  .showBox .d-flex {
+    flex-wrap: wrap;
+  }
 }
 
 .maxW-500 {

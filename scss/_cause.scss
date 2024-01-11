@@ -79,19 +79,14 @@
   display: none;
 }
 
-.caseList {
-  @include sm-mob() {
-    margin-top: 150px;
-  }
-}
-
 .caseListInside {
   background-color: #fff;
   min-height: calc(100vh - 205px);
   margin-top: 125px;
 
   @include mob() {
-    height: 100dvh;
+    // height: 100dvh;
+    height: auto;
   }
   .container-fluid {
     height: inherit;
@@ -104,6 +99,12 @@
 
   .leftArea {
     margin-left: -15px;
+    @include pad() {
+      display: none;
+    }
+    @include mob() {
+      display: none;
+    }
     img {
       height: inherit;
       max-height: 1074px;
@@ -111,12 +112,16 @@
   }
   .listMain {
     max-width: 100%;
-
     min-height: 1000px;
     max-height: 1000px;
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 25px;
+    @include mob() {
+      padding-right: 0;
+      max-height: inherit;
+      overflow-y: hidden;
+    }
     .buildMenu {
       a {
         font-size: $font * 1.5;
@@ -173,6 +178,15 @@
         li {
           border-bottom: #ccc solid 1px;
           padding: 25px 0;
+          .box {
+            .d-flex {
+              justify-content: space-between;
+              @include mob() {
+                flex-wrap: wrap;
+                justify-content: center;
+              }
+            }
+          }
           a {
             transition: all 0.35s ease;
             img {
@@ -180,6 +194,10 @@
               transition: all 0.35s ease;
               height: 250px;
               object-fit: cover;
+              width: 100%;
+              @include mob() {
+                width: 100%;
+              }
             }
 
             &:hover {
@@ -194,6 +212,16 @@
       }
       .addressInfo {
         margin-top: 50%;
+        @include xl-pad() {
+          margin-top: 20%;
+        }
+        @include pad() {
+          margin-top: 20%;
+        }
+        @include mob() {
+          margin-top: 15%;
+          margin-bottom: 15%;
+        }
         ul {
           @include ulstyle();
           border-top: none;
@@ -209,6 +237,11 @@
 }
 
 .caseList {
+  .item {
+    img {
+      height: auto !important;
+    }
+  }
   .owl-dots {
     margin-left: -100%;
     text-align: left;
@@ -231,4 +264,9 @@
 
 .showBox {
   display: none;
+  .d-flex {
+    @include mob() {
+      flex-wrap: wrap;
+    }
+  }
 }
