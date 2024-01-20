@@ -30,7 +30,7 @@
           <div class="col-md-3">
             <div class="leftArea">
               <h1>獲獎經歷</h1>
-              <div class="masterTitle">AWARDS</div>
+              <div class="masterTitle enfont2">AWARDS</div>
               <img src="./images/award/award_1.png" width="320" height="695" class="img-fluid" />
             </div>
           </div>
@@ -39,55 +39,21 @@
               <div class="col-md-3">
                 <div class="dateList">
                   <ul>
-                    <li>
-                      <span>2021</span>
-                      <span>第23屆 國家建築金質獎</span>
+                    <li class="active">
+                      <a href="#"> <span>2021</span> <span>第23屆 國家建築金質獎</span></a>
                     </li>
                     <li>
-                      <span>2020</span>
-                      <span>第21屆 國家品牌玉山獎</span>
+                      <a href="#"> <span>2020</span> <span>第21屆 國家品牌玉山獎</span></a>
                     </li>
                     <li>
-                      <span>2019</span>
-                      <span>第17屆 國家建築金質獎</span>
+                      <a href="#"> <span>2019</span> <span>第17屆 國家建築金質獎</span></a>
                     </li>
                   </ul>
                 </div>
               </div>
               <div class="col-md-9">
                 <div class="awardSlideBox">
-                  <div class="owl-carousel owl-theme">
-                    <div class="item">
-                      <img src="./images/award/2019-1.jpg" class="img-fluid" />
-                    </div>
-                    <div class="item">
-                      <img src="./images/award/2019-2.jpg" class="img-fluid" />
-                    </div>
-                    <div class="item">
-                      <img src="./images/award/2019-3.jpg" class="img-fluid" />
-                    </div>
-                    <div class="item">
-                      <img src="./images/award/2020-1.jpg" class="img-fluid" />
-                    </div>
-                    <div class="item">
-                      <img src="./images/award/2020-2.jpg" class="img-fluid" />
-                    </div>
-                    <div class="item">
-                      <img src="./images/award/2020-3.jpg" class="img-fluid" />
-                    </div>
-                    <div class="item">
-                      <img src="./images/award/2021-1.jpg" class="img-fluid" />
-                    </div>
-                    <div class="item">
-                      <img src="./images/award/2021-2.jpg" class="img-fluid" />
-                    </div>
-                    <div class="item">
-                      <img src="./images/award/2021-3.jpg" class="img-fluid" />
-                    </div>
-                    <div class="item">
-                      <img src="./images/award/2021-4.jpg" class="img-fluid" />
-                    </div>
-                  </div>
+                  <div class="owl-carousel owl-theme"></div>
                 </div>
               </div>
             </div>
@@ -106,5 +72,97 @@
     <script src="js/jquery.nice-select.min.js"></script>
     <!-- <script src="js/jquery.nicescroll.min.js"></script>  -->
     <script src="js/action.js"></script>
+    <script>
+      const imgArray = [
+        {
+          year: "2019",
+          images: [
+            { path: "./images/award/2019-1.jpg" },
+            { path: "./images/award/2019-2.jpg" },
+            { path: "./images/award/2019-3.jpg" },
+
+            // 其他 2019 年的圖片
+          ],
+        },
+        {
+          year: "2020",
+          images: [
+            { path: "./images/award/2020-1.jpg" },
+            { path: "./images/award/2020-2.jpg" },
+            { path: "./images/award/2020-3.jpg" },
+
+            // 其他 2020 年的圖片
+          ],
+        },
+        {
+          year: "2021",
+          images: [
+            { path: "./images/award/2021-1.jpg" },
+            { path: "./images/award/2021-2.jpg" },
+            { path: "./images/award/2021-3.jpg" },
+            { path: "./images/award/2021-4.jpg" },
+
+            // 其他 2021 年的圖片
+          ],
+        },
+        // 其他年份的設定
+      ];
+
+      $(function () {
+        // 獲取所有 li 元素
+        let liElements = document.querySelectorAll(".dateList li");
+
+        // 添加點擊事件監聽器
+        liElements.forEach(function (li) {
+          li.addEventListener("click", function () {
+            // 移除所有 li 的 active 類別
+            liElements.forEach(function (item) {
+              item.classList.remove("active");
+            });
+
+            // 將被點擊的 li 添加 active 類別
+            li.classList.add("active");
+
+            // 獲取被點擊的年份
+            let selectedYear = li.querySelector("span:first-child").innerText;
+
+            // 顯示相應年份的圖片
+            showImagesByYear(selectedYear);
+          });
+        });
+
+        // 初始化，預設顯示 2021 年的圖片
+        showImagesByYear("2021");
+      });
+
+      // 函數：根據年份顯示相應的圖片
+      function showImagesByYear(year) {
+        // 清空輪播內容
+        $(".awardSlideBox .owl-carousel").replaceWith('<div class="owl-carousel owl-theme"></div>');
+
+        // 查找相應年份的圖片數組
+        const selectedImages = imgArray.find((item) => item.year === year).images;
+
+        // 將相應年份的圖片加入輪播
+        selectedImages.forEach((image) => {
+          $(".awardSlideBox .owl-carousel ").append(
+            `<div class="item"><img src="${image.path}" class="img-fluid" /></div>`
+          );
+        });
+
+        // 初始化輪播
+        $(".awardSlideBox .owl-carousel").owlCarousel({
+          loop: true,
+          nav: false,
+          autoplay: true,
+          margin: 15,
+          items: 1,
+          mouseDrag: true,
+          autoplayTimeout: 5000,
+          smartSpeed: 350,
+          dots: false,
+        });
+      }
+    </script>
   </body>
 </html>

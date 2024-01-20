@@ -45,27 +45,56 @@
       li {
         position: relative;
         padding: 50px 30px;
-        span {
-          display: block;
-          &:first-child {
-            color: #2b4586;
-            font-weight: 600;
-            position: relative;
-            &:before {
-              content: "";
-              width: 15px;
-              height: 15px;
-              background-color: #2b4586;
-              position: absolute;
-              left: -37px;
-              top: 4px;
-              border-radius: 50vw;
+        &.active {
+          a {
+            span {
+              &:first-child {
+                color: #2b4586;
+                font-weight: 600;
+                position: relative;
+                &:before {
+                  content: "";
+                  width: 15px;
+                  height: 15px;
+                  background-color: #2b4586;
+                  position: absolute;
+                  left: -37px;
+                  top: 4px;
+                  border-radius: 50vw;
+                }
+              }
+              &:last-child {
+                color: #666;
+              }
             }
           }
-          &:last-child {
-            color: #666;
+        }
+        a {
+          text-decoration: none;
+          span {
+            display: block;
+
+            &:first-child {
+              color: #ccc;
+              font-weight: 600;
+              position: relative;
+              &:before {
+                content: "";
+                width: 15px;
+                height: 15px;
+                background-color: #ccc;
+                position: absolute;
+                left: -37px;
+                top: 4px;
+                border-radius: 50vw;
+              }
+            }
+            &:last-child {
+              color: #ccc;
+            }
           }
         }
+
         &:before {
           content: "";
           width: 1px;

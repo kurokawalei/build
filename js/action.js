@@ -144,34 +144,6 @@ function showPage(pageNumber) {
   }
 }
 
-//滑鼠滾動相關
-function handleWheel(event) {
-  //不能滾動
-  if (window.location.hash === "#about" || window.location.hash === "#case") {
-    return;
-  }
-
-  if (!scrolling) {
-    scrolling = true;
-
-    if (event.deltaY > 30 && currentPage < 5) {
-      currentPage++;
-      showPage(currentPage);
-      updateMenuClass(currentPage);
-    } else if (event.deltaY < -30 && currentPage > 1) {
-      currentPage--;
-      showPage(currentPage);
-      updateMenuClass(currentPage);
-    }
-
-    setTimeout(() => {
-      scrolling = false;
-    }, 1000); // 限制滾動每次間隔至少為 1000 毫秒
-  }
-}
-
-document.body.addEventListener("wheel", handleWheel);
-
 document.addEventListener("DOMContentLoaded", function () {
   const menuLinks = document.getElementById("menuLinks");
 
@@ -234,41 +206,4 @@ $(".caseList .owl-carousel").owlCarousel({
   mouseDrag: true,
   autoplayTimeout: 5000,
   smartSpeed: 350,
-});
-
-$(".awardSlideBox .owl-carousel").owlCarousel({
-  loop: true,
-  nav: false,
-  autoplay: true,
-  margin: 15,
-  items: 1,
-  mouseDrag: true,
-  autoplayTimeout: 5000,
-  smartSpeed: 350,
-  dots: false,
-});
-
-$(".activeSlider .owl-carousel").owlCarousel({
-  loop: true,
-  margin: 30,
-  nav: false,
-  dots: false,
-
-  smartSpeed: 350,
-  center: true,
-  responsiveClass: true,
-  responsive: {
-    0: {
-      items: 1,
-      stagePadding: 0,
-    },
-    600: {
-      items: 1,
-      stagePadding: 0,
-    },
-    1000: {
-      items: 1.5,
-      stagePadding: 0,
-    },
-  },
 });

@@ -211,7 +211,7 @@
         }
       }
       .addressInfo {
-        margin-top: 50%;
+        margin-top: 40%;
         @include xl-pad() {
           margin-top: 20%;
         }
@@ -228,7 +228,6 @@
           li {
             padding: 5px 0;
             border: none;
-            padding: 0;
           }
         }
       }
@@ -264,7 +263,12 @@
 
 .showBox {
   display: none;
+
   .d-flex {
+    img {
+      filter: grayscale(0) !important;
+    }
+
     @include mob() {
       flex-wrap: wrap;
     }

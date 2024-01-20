@@ -10,6 +10,10 @@ html {
   font-family: "Libre Baskerville", serif;
 }
 
+.enfont2 {
+  font-family: "Times New Roman";
+}
+
 body {
   font-family: "MyFont", "Noto Sans TC", sans-serif !important;
   -webkit-overflow-scrolling: touch;
@@ -1015,6 +1019,7 @@ body {
 }
 
 .nice-select {
+  font-family: "Times New Roman", Times, serif !important;
   width: 100% !important;
   background-color: rgba(255, 255, 255, 0.5) !important;
 
