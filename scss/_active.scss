@@ -3,23 +3,58 @@
 
 .activeSlider {
   position: relative;
+  @include pad() {
+    margin-bottom: 25px;
+  }
+  @include mob() {
+    padding: 0 25px;
+    margin-bottom: 15px;
+  }
   &:before {
     content: url(../images/active/active.svg);
     width: 414px;
     height: 517px;
     position: absolute;
     left: -150px;
-    top: -100px;
+    top: -50px;
+
+    @include xxl() {
+      width: 200px;
+      height: 250px;
+      position: absolute;
+      left: -80px;
+      top: -20px;
+    }
+    @include xl-pad() {
+      width: 200px;
+      height: 250px;
+      position: absolute;
+      left: -70px;
+      top: -80px;
+    }
+    @include pad() {
+      display: none;
+    }
+
     @include mob() {
       display: none;
     }
   }
   .imgBox {
     position: relative;
+    @include xxl() {
+      height: 600px;
+    }
+    @include xl() {
+      height: 600px;
+    }
     img {
       height: 700px;
       object-fit: cover;
       object-position: center;
+      @include pad() {
+        height: auto;
+      }
       @include mob() {
         height: 500px;
       }
@@ -52,6 +87,9 @@
   }
   .masterTitle {
     margin-bottom: 100px;
+    @include pad() {
+      margin-bottom: 50px;
+    }
     @include mob() {
       margin-bottom: 30px;
     }

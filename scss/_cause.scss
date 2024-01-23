@@ -94,6 +94,15 @@
       height: inherit;
       align-items: center;
       justify-content: space-between;
+      .col-md-auto.col-xl-auto.col-lg-3.col-xl-auto {
+        @include xl() {
+          height: calc(100vh - 205px);
+        }
+        @include xl-pad() {
+          height: calc(100vh - 205px);
+          background-color: #2e488e;
+        }
+      }
     }
   }
 
@@ -117,6 +126,33 @@
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 25px;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-button {
+      background: transparent;
+
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+
+      background-color: rgba(0, 0, 0, 0.3);
+
+      border: 1px solid slategrey;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: transparent;
+    }
+
     @include mob() {
       padding-right: 0;
       max-height: inherit;
@@ -211,7 +247,7 @@
         }
       }
       .addressInfo {
-        margin-top: 40%;
+        margin-top: 30%;
         @include xl-pad() {
           margin-top: 20%;
         }
@@ -245,7 +281,11 @@
     margin-left: -100%;
     text-align: left;
     margin-top: 0 !important;
+    @include xxl() {
+      margin-top: 30px !important;
+    }
   }
+
   .owl-theme .owl-dots .owl-dot.active span,
   .owl-theme .owl-dots .owl-dot:hover span {
     background: #666;

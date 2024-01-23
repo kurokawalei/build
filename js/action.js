@@ -48,6 +48,20 @@ function updateMenuClass(pageNumber) {
   }
 }
 
+if (window.location.hash === "#2") {
+  const container = document.getElementById("wrap");
+  setTimeout(function () {
+    container.style.transform = `translateX(-${100}vw)`;
+  }, 3500);
+}
+
+if (window.location.hash === "#3") {
+  const container = document.getElementById("wrap");
+  setTimeout(function () {
+    container.style.transform = `translateX(-${200}vw)`;
+  }, 3500);
+}
+
 if (window.location.hash === "#4") {
   const container = document.getElementById("wrap");
   setTimeout(function () {
@@ -76,8 +90,15 @@ function showPage(pageNumber) {
   } else {
     if (pageNumber === 4) {
       window.location.href = "./index.html#4";
-    } else if (pageNumber === 5) {
+    }
+    if (pageNumber === 5) {
       window.location.href = "./index.html#5";
+    }
+    if (pageNumber === 3) {
+      window.location.href = "./index.html#3";
+    }
+    if (pageNumber === 2) {
+      window.location.href = "./index.html#2";
     }
   }
 
