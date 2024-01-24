@@ -430,7 +430,7 @@
   top: 0;
   left: 0;
   background-color: #fff;
-  z-index: 1;
+  z-index: 5;
   height: 125px;
 }
 #header .maxW-1745 {
@@ -506,6 +506,11 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   bottom: -51px;
   display: none;
+}
+@media (min-width: 1400px) and (max-width: 1699.98px) {
+  #header #nav > ul > li > ul {
+    bottom: -44px;
+  }
 }
 #header #nav > ul > li > ul li {
   padding: 10px 25px;
@@ -2317,6 +2322,11 @@ body {
   border-radius: 25px;
   margin-top: 220px;
 }
+@media (min-width: 1400px) and (max-width: 1699.98px) {
+  #page5 .sendBtn {
+    margin-top: 120px;
+  }
+}
 @media (max-width: 767.98px) {
   #page5 .sendBtn {
     margin-top: 20px;
@@ -2340,6 +2350,11 @@ body {
   color: #fff;
   margin-top: 150px;
   font-size: 1.2rem;
+}
+@media (min-width: 1400px) and (max-width: 1699.98px) {
+  #page5 .qrcode {
+    margin-top: 60px;
+  }
 }
 @media (max-width: 767.98px) {
   #page5 .qrcode {
@@ -2895,6 +2910,11 @@ body {
      object-fit: cover;
   width: 100%;
 }
+@media (min-width: 1400px) and (max-width: 1699.98px) {
+  .caseListInside .listMain .list ul li a img {
+    max-height: 350px;
+  }
+}
 @media (max-width: 767.98px) {
   .caseListInside .listMain .list ul li a img {
     width: 100%;
@@ -3322,7 +3342,11 @@ body.about #page3 .c7 {
   width: 100%;
   height: 100%;
   margin: 0;
-  padding-top: 150px;
+}
+@media (min-width: 1921px) {
+  .aboutView {
+    padding-top: 150px;
+  }
 }
 @media (max-width: 767.98px) {
   .aboutView {
@@ -3680,6 +3704,13 @@ body.about #page3 .c7 {
 .awardSlideBox img {
   border-radius: 15vw 0 0 15vw;
 }
+@media (min-width: 1400px) and (max-width: 1699.98px) {
+  .awardSlideBox img {
+    height: 500px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
 
 .maxW-500 {
   width: 100%;
@@ -3945,7 +3976,7 @@ body.about #page3 .c7 {
 }
 @media (min-width: 1400px) and (max-width: 1699.98px) {
   .activeSlider .imgBox {
-    height: 600px;
+    height: 500px;
   }
 }
 @media (min-width: 1200px) and (max-width: 1399.98px) {
@@ -3959,6 +3990,11 @@ body.about #page3 .c7 {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+@media (min-width: 1400px) and (max-width: 1699.98px) {
+  .activeSlider .imgBox img {
+    height: 600px;
+  }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .activeSlider .imgBox img {

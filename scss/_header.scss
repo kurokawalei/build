@@ -8,9 +8,8 @@
   top: 0;
   left: 0;
   background-color: #fff;
-  z-index: 1;
+  z-index: 5;
   height: 125px;
-
   .maxW-1745 {
     height: inherit;
     .container {
@@ -92,6 +91,9 @@
           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
           bottom: -51px;
           display: none;
+          @include xxl() {
+            bottom: -44px;
+          }
 
           li {
             padding: 10px 25px;

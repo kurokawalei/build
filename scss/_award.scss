@@ -142,5 +142,9 @@
   }
   img {
     border-radius: 15vw 0 0 15vw;
+    @include xxl() {
+      height: 500px;
+      object-fit: cover;
+    }
   }
 }

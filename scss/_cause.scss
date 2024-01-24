@@ -231,6 +231,9 @@
               height: 250px;
               object-fit: cover;
               width: 100%;
+              @include xxl() {
+                max-height: 350px;
+              }
               @include mob() {
                 width: 100%;
               }
