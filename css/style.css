@@ -2910,11 +2910,6 @@ body {
      object-fit: cover;
   width: 100%;
 }
-@media (min-width: 1400px) and (max-width: 1699.98px) {
-  .caseListInside .listMain .list ul li a img {
-    max-height: 350px;
-  }
-}
 @media (max-width: 767.98px) {
   .caseListInside .listMain .list ul li a img {
     width: 100%;
