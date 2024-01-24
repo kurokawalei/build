@@ -22,6 +22,9 @@
   .leftArea {
     img {
       margin-left: -15px;
+      @include xxl() {
+        transform: translateY(-90px);
+      }
       @include mob() {
         display: none;
       }
@@ -49,6 +52,9 @@
       li {
         position: relative;
         padding: 50px 30px;
+        @include xxl() {
+          padding: 30px;
+        }
         &.active {
           a {
             span {
@@ -143,7 +149,7 @@
   img {
     border-radius: 15vw 0 0 15vw;
     @include xxl() {
-      height: 500px;
+      height: 460px;
       object-fit: cover;
     }
   }

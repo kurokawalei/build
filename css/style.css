@@ -1958,6 +1958,11 @@ body {
   left: 50%;
   transform: translateX(30%);
 }
+@media (min-width: 1400px) and (max-width: 1699.98px) {
+  #page3 .l12 {
+    bottom: -190px;
+  }
+}
 @media (max-width: 767.98px) {
   #page3 .l12 {
     bottom: -250px;
@@ -2201,10 +2206,15 @@ body {
   }
 }
 #page4 .c2 {
-  bottom: -150px;
+  bottom: -230px;
   position: absolute;
   left: 75%;
   transform: translateX(-50%);
+}
+@media (min-width: 1400px) and (max-width: 1699.98px) {
+  #page4 .c2 {
+    bottom: 50px;
+  }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
   #page4 .c2 img {
@@ -3302,6 +3312,14 @@ body.about #page3 .c7 {
   left: -130px;
   top: 100px;
 }
+@media (min-width: 1400px) and (max-width: 1699.98px) {
+  .aboutImage:before {
+    width: 632px;
+    height: 455px;
+    left: -180px;
+    top: 50px;
+  }
+}
 @media (min-width: 1200px) and (max-width: 1399.98px) {
   .aboutImage:before {
     top: 50px;
@@ -3588,6 +3606,11 @@ body.about #page3 .c7 {
 .awardInside .leftArea img {
   margin-left: -15px;
 }
+@media (min-width: 1400px) and (max-width: 1699.98px) {
+  .awardInside .leftArea img {
+    transform: translateY(-90px);
+  }
+}
 @media (max-width: 767.98px) {
   .awardInside .leftArea img {
     display: none;
@@ -3619,6 +3642,11 @@ body.about #page3 .c7 {
 .awardInside .dateList ul li {
   position: relative;
   padding: 50px 30px;
+}
+@media (min-width: 1400px) and (max-width: 1699.98px) {
+  .awardInside .dateList ul li {
+    padding: 30px;
+  }
 }
 .awardInside .dateList ul li.active a span:first-child {
   color: #2b4586;
@@ -3701,7 +3729,7 @@ body.about #page3 .c7 {
 }
 @media (min-width: 1400px) and (max-width: 1699.98px) {
   .awardSlideBox img {
-    height: 500px;
+    height: 460px;
     -o-object-fit: cover;
        object-fit: cover;
   }

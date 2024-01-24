@@ -110,6 +110,12 @@ body {
     z-index: 0;
     left: -130px;
     top: 100px;
+    @include xxl() {
+      width: 632px;
+      height: 455px;
+      left: -180px;
+      top: 50px;
+    }
     @include xl() {
       top: 50px;
     }
