@@ -189,25 +189,16 @@
           $(".activeSlider .owl-carousel").owlCarousel({
             loop: true,
             margin: 30,
-            nav: false,
+            nav: true,
+            navText: [
+              '<img src="./images/active/arrow-left.svg" width="24" height="24">',
+              '<img src="./images/active/arrow-right.svg" width="24" height="24">',
+            ],
             dots: false,
             smartSpeed: 350,
             center: true,
             responsiveClass: true,
-            responsive: {
-              0: {
-                items: 1,
-                stagePadding: 0,
-              },
-              600: {
-                items: 1,
-                stagePadding: 0,
-              },
-              1000: {
-                items: 1.5,
-                stagePadding: 0,
-              },
-            },
+            items: 1,
           });
         }
       });

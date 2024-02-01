@@ -3,6 +3,32 @@
 
 .activeSlider {
   position: relative;
+  padding: 0 10%;
+  @include xxxl-up() {
+    padding: 0 15%;
+  }
+  @include xl() {
+    padding: 0 10%;
+  }
+
+  &:before {
+    content: url(../images/active/back1.svg);
+    position: absolute;
+    width: 469px;
+    height: 335px;
+    right: 70px;
+    bottom: -100px;
+  }
+
+  &:after {
+    content: url(../images/active/back2.svg);
+    position: absolute;
+    width: 722px;
+    height: 166px;
+    top: 30px;
+    right: 60px;
+  }
+
   @include pad() {
     margin-bottom: 25px;
   }
@@ -10,36 +36,29 @@
     padding: 0 25px;
     margin-bottom: 15px;
   }
-  &:before {
-    content: url(../images/active/active.svg);
-    width: 414px;
-    height: 517px;
+
+  .owl-nav {
+    margin-top: 0;
     position: absolute;
-    left: -150px;
-    top: -50px;
-
-    @include xxl() {
-      width: 200px;
-      height: 250px;
-      position: absolute;
-      left: -80px;
-      top: -20px;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    .owl-prev {
+      left: -50px !important;
+      position: absolute !important;
+      &:hover {
+        background-color: transparent;
+      }
     }
-    @include xl-pad() {
-      width: 200px;
-      height: 250px;
-      position: absolute;
-      left: -70px;
-      top: -80px;
-    }
-    @include pad() {
-      display: none;
-    }
-
-    @include mob() {
-      display: none;
+    .owl-next {
+      right: -50px !important;
+      position: absolute !important;
+      &:hover {
+        background-color: transparent;
+      }
     }
   }
+
   .imgBox {
     position: relative;
     @include xxl() {
